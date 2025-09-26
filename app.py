@@ -584,7 +584,10 @@ def show_login_page():
     st.title(config['app_name'])
     
     
-    name, authentication_status, username = authenticator.login('Login', 'main')
+    name, authentication_status, username = authenticator.login(
+    fields={"Form name": "Login"},
+    location="main"
+)
 
     
     if authentication_status:
